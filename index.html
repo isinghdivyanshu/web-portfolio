@@ -61,19 +61,22 @@
 				<h2>Why Choose Me?</h2>
 				<div class="aboutBox">
 					<img src="./images/me.png" alt="Divyanshu Singh" />
-					Hailing from Varanasi, Uttar Pradesh, I am a devoted
-					Full-Stack Web Developer currently pursuing a Bachelor's
-					degree in Computer Science and Engineering at Vellore
-					Institute of Technology. Specializing in the MERN Stack, I
-					harbor a genuine passion for web development. Eager to
-					broaden my skill set, I am on an unending journey to
-					contribute to innovative projects and make a meaningful
-					impact in the ever-evolving tech landscape. Join me as I
-					navigate the exciting intersections of code and creativity,
-					embracing continuous learning along the way. I'm always
-					seeking opportunities to create innovative digital
-					experiences, fueled by a commitment to excellence, with the
-					aim to not only meet but exceed expectations.
+					<p>
+						Hailing from Varanasi, Uttar Pradesh, I am a devoted
+						Full-Stack Web Developer currently pursuing a Bachelor's
+						degree in Computer Science and Engineering at Vellore
+						Institute of Technology. Specializing in the MERN Stack,
+						I harbor a genuine passion for web development. Eager to
+						broaden my skill set, I am on an unending journey to
+						contribute to innovative projects and make a meaningful
+						impact in the ever-evolving tech landscape. Join me as I
+						navigate the exciting intersections of code and
+						creativity, embracing continuous learning along the way.
+						I'm always seeking opportunities to create innovative
+						digital experiences, fueled by a commitment to
+						excellence, with the aim to not only meet but exceed
+						expectations.
+					</p>
 				</div>
 			</section>
 		</main>
@@ -291,7 +294,9 @@
 							placeholder="Type your message"
 						></textarea>
 					</div>
-					<button type="submit" class="btn">Submit</button>
+					<button type="submit" class="btn" onclick="submitForm()">
+						Submit
+					</button>
 				</form>
 			</div>
 		</section>
@@ -334,4 +339,22 @@
 			</div>
 		</footer>
 	</body>
+	<script>
+		function submitForm() {
+			var clientName = document.getElementById("clientName").value;
+			var clientEmail = document.getElementById("clientEmail").value;
+			var clientPhone = document.getElementById("clientPhone").value;
+			var clientMessage = document.getElementById("clientMessage").value;
+
+			var link =
+				"mailto:singhdivyanshu2707@gmail.com" +
+				"?cc=" +
+				clientEmail +
+				"&subject=" +
+				escape("This is my subject") +
+				"&body=" +
+				escape(clientMessage);
+			window.location.href = link;
+		}
+	</script>
 </html>
